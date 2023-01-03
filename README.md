@@ -2,7 +2,7 @@
 
 ---
 
-![Restuarant-app](https://ibb.co/KyjqfN6)
+![Restuarant-app](https://ibb.co/KyjqfN6?raw=true)
 Live site: https://capstone-project-frontend.onrender.com/dashboard
 
 ## Brief Explanation of the API

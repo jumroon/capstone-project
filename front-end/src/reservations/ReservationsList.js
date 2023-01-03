@@ -1,6 +1,6 @@
 import React from "react";
 import { setReservationStatus } from "../utils/api";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 function ReservationsList({ reservations }) {
   const history = useHistory();
@@ -8,7 +8,7 @@ function ReservationsList({ reservations }) {
   const handleCancel = async (reservation_id) => {
     if (
       window.confirm(
-        "Do you want to cancel this reservation? This cannot be undone.",
+        "Do you want to cancel this reservation? This cannot be undone."
       )
     ) {
       await setReservationStatus(reservation_id, "cancelled");
@@ -55,8 +55,7 @@ function ReservationsList({ reservations }) {
                     <th>Status</th>
                     <td>
                       <div
-                        data-reservation-id-status={reservation.reservation_id}
-                      >
+                        data-reservation-id-status={reservation.reservation_id}>
                         {reservation.status || "booked"}
                       </div>
                     </td>
@@ -66,19 +65,18 @@ function ReservationsList({ reservations }) {
 
               <div>
                 {reservation.status === null && (
-                  <a href={`/reservations/${reservation.reservation_id}/seat`}>
+                  <Link to={`/reservations/${reservation.reservation_id}/seat`}>
                     <button className="btn btn-primary">Seat</button>
-                  </a>
+                  </Link>
                 )}
-                <a href={`/reservations/${reservation.reservation_id}/edit`}>
+                <Link to={`/reservations/${reservation.reservation_id}/edit`}>
                   <button className="btn btn-primary">Edit</button>
-                </a>
+                </Link>
                 {reservation.status !== "cancelled" && (
                   <button
                     className="btn btn-secondary"
                     data-reservation-id-cancel={reservation.reservation_id}
-                    onClick={() => handleCancel(reservation.reservation_id)}
-                  >
+                    onClick={() => handleCancel(reservation.reservation_id)}>
                     Cancel
                   </button>
                 )}

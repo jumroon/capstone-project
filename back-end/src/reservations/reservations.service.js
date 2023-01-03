@@ -1,5 +1,8 @@
 const knex = require("../db/connection");
 
+//all endpoints in this file are for /reservations and require arguments
+// (at the minimum a date parameter, according to the readme for the project)
+
 function getAllReservationsByMobileNumber(mobileNumber) {
   return knex("reservations")
     .select("*")

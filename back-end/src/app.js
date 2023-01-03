@@ -12,9 +12,12 @@ const tablesRouter = require("./tables/tables.router");
 
 const app = express();
 
+//use of the cors package for safety reasons
+
 app.use(cors());
 app.use(express.json());
 
+//routes
 app.use("/reservations", reservationsRouter);
 app.use("/tables", tablesRouter);
 

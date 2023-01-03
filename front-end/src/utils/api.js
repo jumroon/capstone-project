@@ -59,13 +59,21 @@ async function fetchJson(url, options, onCancel) {
  */
 
 export async function listReservations(params, signal) {
-  const url = new URL(`${API_BASE_URL}/reservations`);
-  Object.entries(params).forEach(([key, value]) =>
-    url.searchParams.append(key, value.toString()),
-  );
-  return await fetchJson(url, { headers, signal }, [])
-    .then(formatReservationDate)
-    .then(formatReservationTime);
+  try {
+    const url = new URL(`${API_BASE_URL}/reservations`);
+    Object.entries(params).forEach(([key, value]) =>
+      url.searchParams.append(key, value.toString())
+    );
+    return await fetchJson(url, { headers, signal }, [])
+      .then(formatReservationDate)
+      .then(formatReservationTime);
+  } catch (error) {
+    console.error(error);
+    // show an error message to the user
+    alert("An error occurred while loading the reservations");
+    // retry the request
+    return listReservations(params, signal);
+  }
 }
 
 export async function createReservation(reservation, signal) {

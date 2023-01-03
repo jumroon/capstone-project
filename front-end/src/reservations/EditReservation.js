@@ -32,7 +32,6 @@ function EditReservation() {
 
   useEffect(() => {
     async function loadReservationData() {
-      console.log("reservation_id--------------------", reservation_id);
       const abortController = new AbortController();
       setReservationsError(null);
       try {

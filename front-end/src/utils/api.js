@@ -61,7 +61,7 @@ async function fetchJson(url, options, onCancel) {
 export async function listReservations(params, signal) {
   const url = new URL(`${API_BASE_URL}/reservations`);
   Object.entries(params).forEach(([key, value]) =>
-    url.searchParams.append(key, value.toString())
+    url.searchParams.append(key, value.toString()),
   );
   return await fetchJson(url, { headers, signal }, [])
     .then(formatReservationDate)
@@ -103,8 +103,6 @@ export async function getReservationById(reservation_id, signal) {
 }
 
 export async function setTableToOccupied(table_id, reservation_id, signal) {
-  console.log("table_id", table_id);
-  console.log("reservation_id", reservation_id);
   const url = `${API_BASE_URL}/tables/${table_id}/seat`;
   const options = {
     method: "PUT",

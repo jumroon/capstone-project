@@ -41,37 +41,39 @@ function TablesSection() {
       <div>
         {tables.map((table) => {
           return (
-            <div className="restaurant-table" key={table.table_id}>
+            <div className="item-container" key={table.table_id}>
               <table>
-                <tr>
-                  <th>Table name</th>
-                  <td>{table.table_name}</td>
-                </tr>
-                <tr>
-                  <th>Table Capacity</th>
-                  <td>{table.capacity}</td>
-                </tr>
-                <tr>
-                  <th>Status</th>
-                  <td>
-                    <div data-table-id-status={table.table_id}>
-                      {table.reservation_id === null ? "Free" : "Occupied"}
-                    </div>
-                  </td>
-                  <td>
-                    <div>
-                      {table.reservation_id !== null && (
-                        <button
-                          className="btn btn-primary"
-                          data-table-id-finish={table.table_id}
-                          onClick={() => handleFinishTable(table.table_id)}
-                        >
-                          Finish
-                        </button>
-                      )}
-                    </div>
-                  </td>
-                </tr>
+                <tbody>
+                  <tr>
+                    <th>Table name</th>
+                    <td>{table.table_name}</td>
+                  </tr>
+                  <tr>
+                    <th>Table Capacity</th>
+                    <td>{table.capacity}</td>
+                  </tr>
+                  <tr>
+                    <th>Status</th>
+                    <td>
+                      <div data-table-id-status={table.table_id}>
+                        {table.reservation_id === null ? "Free" : "Occupied"}
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        {table.reservation_id !== null && (
+                          <button
+                            className="btn btn-primary"
+                            data-table-id-finish={table.table_id}
+                            onClick={() => handleFinishTable(table.table_id)}
+                          >
+                            Finish
+                          </button>
+                        )}
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
               </table>
             </div>
           );

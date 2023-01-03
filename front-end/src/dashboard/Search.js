@@ -21,7 +21,6 @@ function Search() {
         formData.mobile_number,
         abortController.signal,
       );
-      console.log("RESULT------", result);
       setReservations(result);
     } catch (error) {
       setError(error);

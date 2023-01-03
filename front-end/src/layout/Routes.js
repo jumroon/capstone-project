@@ -11,6 +11,8 @@ import CurrentReservation from "../reservations/CurrentReservation";
 import Search from "../dashboard/Search";
 import EditReservation from "../reservations/EditReservation";
 
+import "./Routes.css";
+
 function useQuery() {
   const { search } = useLocation();
 

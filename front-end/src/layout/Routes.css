@@ -1,0 +1,6 @@
+.routes-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8px;
+}

@@ -2,8 +2,8 @@
 
 ---
 
-![Restuarant-<img width="1399" alt="Screenshot 2023-01-03 at 03 58 05" src="https://user-images.githubusercontent.com/4723539/210335136-f4573fed-2dfd-4fbf-80a1-2fec602aa437.png">
-app]
+![Restuarant-app]<img width="1399" alt="Screenshot 2023-01-03 at 03 58 05" src="https://user-images.githubusercontent.com/4723539/210335136-f4573fed-2dfd-4fbf-80a1-2fec602aa437.png">
+
 Live site: https://capstone-project-frontend.onrender.com/dashboard
 
 ## Brief Explanation of the API

@@ -1,11 +1,24 @@
 import { useHistory } from "react-router-dom";
+import { useState, useEffect } from "react";
 
-function NewReservation({ reservation, handleChange, onSubmit }) {
+function ReservationForm({ reservation, handleChange, onSubmit }) {
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   const history = useHistory();
 
   function handleCancel() {
     history.goBack();
   }
+
+  const isToday =
+    currentTime.toISOString().split("T")[0] === reservation.reservation_date;
 
   return (
     <form onSubmit={onSubmit}>
@@ -62,7 +75,10 @@ function NewReservation({ reservation, handleChange, onSubmit }) {
             type="time"
             required
             value={reservation.reservation_time}
-            onChange={handleChange}></input>
+            onChange={handleChange}
+            min={
+              isToday ? currentTime.toTimeString().slice(0, 5) : undefined
+            }></input>
         </div>
 
         <div className="pb-1">
@@ -87,4 +103,4 @@ function NewReservation({ reservation, handleChange, onSubmit }) {
   );
 }
 
-export default NewReservation;
+export default ReservationForm;

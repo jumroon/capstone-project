@@ -5,17 +5,13 @@ const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
  * List handler for reservation resources
  */
 
-function isInTheFuture(date) {
-  // Get the current date and time
-  const now = new Date();
-
+function isPast(date) {
+  const today = new Date();
+  today.setUTCHours(0, 0, 0, 0);
+  console.log("today", today);
   const reservationDate = new Date(date);
-
-  // Get the number of milliseconds since the Unix epoch for the current date and the given date
-  const nowTimestamp = now.getTime();
-  const dateTimestamp = reservationDate.getTime();
-  // Compare the timestamps
-  return dateTimestamp > nowTimestamp;
+  console.log("reservation Date", reservationDate);
+  return today > reservationDate;
 }
 
 function isBetween1030And2130(time) {
@@ -54,7 +50,7 @@ function isTuesday(date) {
 function checkIfDateIsValid(request, response, next) {
   const { reservation_date } = request.body.data;
 
-  if (isInTheFuture(reservation_date) && !isTuesday(reservation_date)) {
+  if (!isPast(reservation_date) && !isTuesday(reservation_date)) {
     next();
   } else {
     next({

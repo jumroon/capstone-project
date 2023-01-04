@@ -8,9 +8,7 @@ const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
 function isPast(date) {
   const today = new Date();
   today.setUTCHours(0, 0, 0, 0);
-  console.log("today", today);
   const reservationDate = new Date(date);
-  console.log("reservation Date", reservationDate);
   return today > reservationDate;
 }
 

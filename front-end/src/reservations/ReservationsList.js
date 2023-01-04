@@ -56,7 +56,7 @@ function ReservationsList({ reservations }) {
                     <td>
                       <div
                         data-reservation-id-status={reservation.reservation_id}>
-                        {reservation.status || "booked"}
+                        {reservation.status}
                       </div>
                     </td>
                   </tr>

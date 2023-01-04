@@ -38,7 +38,7 @@ function CurrentReservation() {
       await setTableToOccupied(
         formData.table_id,
         reservationId,
-        abortController.signal,
+        abortController.signal
       );
       history.push(`/dashboard`);
     } catch (error) {
@@ -61,7 +61,7 @@ function CurrentReservation() {
           id="table_id"
           value={formData.table_id}
           onChange={handleChange}
-        >
+          required>
           <option value="" disabled>
             Select a table
           </option>

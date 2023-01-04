@@ -18,7 +18,8 @@ The organization of this backend consists of service, controller, and router for
 
 ## API Endpoints
 
-** RESERVATIONS **
+**RESERVATIONS**
+
 -GET /dashboard: retrieve all reservations (and their info) by the date
 
 -POST /reservations/new: create a new reservation
@@ -31,7 +32,7 @@ The organization of this backend consists of service, controller, and router for
 
 - PUT /reservations/:reservation_id/edit: this will send a put request to the database so that the user can update details of the reservation
 
-** TABLES **
+**TABLES**
 
 -GET /dashboard: retrieves all the tables and their statuses
 

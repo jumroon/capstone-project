@@ -64,7 +64,7 @@ function ReservationsList({ reservations }) {
               </table>
 
               <div>
-                {reservation.status === null && (
+                {reservation.status === "booked" && (
                   <Link to={`/reservations/${reservation.reservation_id}/seat`}>
                     <button className="btn btn-primary">Seat</button>
                   </Link>

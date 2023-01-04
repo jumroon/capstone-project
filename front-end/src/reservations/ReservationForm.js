@@ -18,8 +18,7 @@ function NewReservation({ reservation, handleChange, onSubmit }) {
             type="text"
             required
             value={reservation.first_name}
-            onChange={handleChange}
-          ></input>
+            onChange={handleChange}></input>
         </div>
 
         <div className="pb-1">
@@ -30,8 +29,7 @@ function NewReservation({ reservation, handleChange, onSubmit }) {
             type="text"
             required
             value={reservation.last_name}
-            onChange={handleChange}
-          ></input>
+            onChange={handleChange}></input>
         </div>
 
         <div className="pb-1">
@@ -42,8 +40,7 @@ function NewReservation({ reservation, handleChange, onSubmit }) {
             type="tel"
             required
             value={reservation.mobile_number}
-            onChange={handleChange}
-          ></input>
+            onChange={handleChange}></input>
         </div>
 
         <div className="pb-1">
@@ -54,8 +51,7 @@ function NewReservation({ reservation, handleChange, onSubmit }) {
             type="date"
             required
             value={reservation.reservation_date}
-            onChange={handleChange}
-          ></input>
+            onChange={handleChange}></input>
         </div>
 
         <div className="pb-1">
@@ -66,8 +62,7 @@ function NewReservation({ reservation, handleChange, onSubmit }) {
             type="time"
             required
             value={reservation.reservation_time}
-            onChange={handleChange}
-          ></input>
+            onChange={handleChange}></input>
         </div>
 
         <div className="pb-1">
@@ -79,7 +74,7 @@ function NewReservation({ reservation, handleChange, onSubmit }) {
             required
             value={reservation.people}
             onChange={handleChange}
-          ></input>
+            min="1"></input>
         </div>
       </fieldset>
       <button className="btn btn-primary" type="submit">

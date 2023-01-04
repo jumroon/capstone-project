@@ -32,7 +32,7 @@ function NewTables() {
           ...formData,
           capacity: parseInt(formData.capacity),
         },
-        abortController.signal,
+        abortController.signal
       );
       history.push(`/dashboard`);
     } catch (error) {
@@ -53,25 +53,25 @@ function NewTables() {
           <div className="pb-1">
             <label htmlFor="table_name">Table Name</label>
             <input
+              minLength="2"
               name="table_name"
               id="table_name"
               type="text"
               required
               value={formData.table_name}
-              onChange={handleChange}
-            ></input>
+              onChange={handleChange}></input>
           </div>
 
           <div className="pb-1">
             <label htmlFor="capacity">Capacity</label>
             <input
               name="capacity"
+              min="1"
               id="capacity"
               type="number"
               required
               value={formData.capacity}
-              onChange={handleChange}
-            ></input>
+              onChange={handleChange}></input>
           </div>
         </fieldset>
         <button className="btn btn-primary" type="submit">

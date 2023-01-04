@@ -2,7 +2,9 @@
 
 ---
 
+
 <img width="1399" alt="Screenshot 2023-01-03 at 03 58 05" src="https://user-images.githubusercontent.com/4723539/210335136-f4573fed-2dfd-4fbf-80a1-2fec602aa437.png">
+<img width="1062" alt="Screenshot 2023-01-04 at 07 56 50" src="https://user-images.githubusercontent.com/4723539/210570596-d3896ef3-6c17-4b9b-bace-2c906fa23d7d.png">
 
 Live site: https://capstone-project-frontend.onrender.com/dashboard
 

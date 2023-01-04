@@ -5,9 +5,11 @@ const knex = require("../db/connection");
 
 function getAllReservationsByMobileNumber(mobileNumber) {
   return knex("reservations")
-    .select("*")
-    .where("mobile_number", "like", `%${mobileNumber}%`)
-    .orderBy("reservations.reservation_date");
+    .whereRaw(
+      "translate(mobile_number, '() -', '') like ?",
+      `%${mobileNumber.replace(/\D/g, "")}%`
+    )
+    .orderBy("reservation_date");
 }
 
 function postReservation(reservation) {

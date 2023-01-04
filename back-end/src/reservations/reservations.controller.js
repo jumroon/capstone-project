@@ -60,7 +60,7 @@ function checkIfDateIsValid(request, response, next) {
   const { reservation_date, reservation_time } = request.body.data;
 
   if (
-    isInTheFuture(`${reservation_date}T${reservation_time}`) &&
+    isInTheFuture(`${reservation_date}T${reservation_time}Z`) &&
     !isTuesday(reservation_date)
   ) {
     next();

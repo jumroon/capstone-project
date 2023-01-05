@@ -30,7 +30,7 @@ The organization of this backend consists of service, controller, and router for
 
 -`GET /reservations?mobile_number=<mobile-number>`: will retrieve a reservation where the mobile number matches the parameters given, query string parameter, `mobile_number="<mobile-number>"`
 
-- `PUT /reservations/:reservation_id/edit`: send a put request to the database so that the user can update details of the reservation, payload is the same as POST `data: {first_name: "<first-name>", last_name: "<last-name>", mobile_number: "<mobile-number>", reservation_date: "<YYYY-MM-DD>", reservation_time: "<HH:MM>"}`
+-`PUT /reservations/:reservation_id/edit`: send a put request to the database so that the user can update details of the reservation, payload is the same as POST `data: {first_name: "<first-name>", last_name: "<last-name>", mobile_number: "<mobile-number>", reservation_date: "<YYYY-MM-DD>", reservation_time: "<HH:MM>"}`
 
 **TABLES**
 

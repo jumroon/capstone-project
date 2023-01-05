@@ -11,6 +11,9 @@ function isInTheFuture(date) {
 
   const reservationDate = new Date(date);
 
+  console.log("now", now);
+  console.log("reservationDate", reservationDate);
+
   // Get the number of milliseconds since the Unix epoch for the current date and the given date
   const nowTimestamp = now.getTime();
   const dateTimestamp = reservationDate.getTime();
@@ -52,9 +55,12 @@ function isTuesday(date) {
 }
 
 function checkIfDateIsValid(request, response, next) {
-  const { reservation_date } = request.body.data;
+  const { reservation_date, reservation_time } = request.body.data;
 
-  if (isInTheFuture(reservation_date) && !isTuesday(reservation_date)) {
+  if (
+    isInTheFuture(`${reservation_date}T${reservation_time}`) &&
+    !isTuesday(reservation_date)
+  ) {
     next();
   } else {
     next({

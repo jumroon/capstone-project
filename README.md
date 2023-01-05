@@ -34,12 +34,12 @@ The organization of this backend consists of service, controller, and router for
 
 **TABLES**
 
--`GET /dashboard`: retrieves all the tables and their statuses
+-`GET /dashboard`: retrieve all the tables and their statuses
 
 -`POST /tables/new`: create a new table (inputs are table name and capacity of the table),
 `"data": {"table_name": "<table-name>", "capacity": <table-capacity>}`
 
--`PUT /tables/:table_id/seat/`: will update reservation Id for the table so that the table will be occupied,
+-`PUT /tables/:table_id/seat/`: update reservation Id for the table so that the table will be occupied,
 `"data": {"reservation_id": "<reservation-id>"}`
 
 -`DELETE /tables/:table_id/seat`: delete the reservation Id that is associated with a particular table, freeing up this table for new guests, `"table_id": "<table-id>"`

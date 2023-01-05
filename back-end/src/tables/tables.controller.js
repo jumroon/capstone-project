@@ -142,9 +142,7 @@ async function deleteReservationId(request, response, next) {
   const { table_id } = request.params;
 
   const deletedTable = await service.delete(table_id);
-  const finishTable = await service.finishTable(
-    response.locals.table.reservation_id
-  );
+  await service.finishTable(response.locals.table.reservation_id);
   response.status(200).json({ data: deletedTable });
 }
 

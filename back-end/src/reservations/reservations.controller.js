@@ -11,9 +11,6 @@ function isInTheFuture(date) {
 
   const reservationDate = new Date(date);
 
-  console.log("now", now);
-  console.log("reservationDate", reservationDate);
-
   // Get the number of milliseconds since the Unix epoch for the current date and the given date
   const nowTimestamp = now.getTime();
   const dateTimestamp = reservationDate.getTime();

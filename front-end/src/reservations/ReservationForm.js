@@ -40,7 +40,8 @@ function NewReservation({ reservation, handleChange, onSubmit }) {
             type="tel"
             required
             value={reservation.mobile_number}
-            onChange={handleChange}></input>
+            onChange={handleChange}
+            pattern="[\d-]+"></input>
         </div>
 
         <div className="pb-1">
